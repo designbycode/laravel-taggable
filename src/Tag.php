@@ -1,19 +1,19 @@
 <?php
 
-	namespace Designbycode\Taggable;
-	use Designbycode\Taggable\Traits\TagUsedScopeTrait;
-    use Illuminate\Database\Eloquent\Model;
+namespace Designbycode\Taggable;
 
-    /**
-     * @method static whereIn(string $string, array $normalizeTagNames)
-     * @property mixed|string $slug
-     * @property mixed $name
-     */
-    class Tag extends Model
-	{
-        protected $fillable = ['name', 'slug', 'count'];
+use Designbycode\Taggable\Traits\TagUsedScopeTrait;
+use Illuminate\Database\Eloquent\Model;
 
-        use TagUsedScopeTrait;
+/**
+ * @method static whereIn(string $string, array $normalizeTagNames)
+ *
+ * @property mixed|string $slug
+ * @property mixed $name
+ */
+class Tag extends Model
+{
+    protected $fillable = ['name', 'slug', 'count'];
 
-
-	}
+    use TagUsedScopeTrait;
+}

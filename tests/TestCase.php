@@ -2,9 +2,9 @@
 
 namespace Designbycode\Taggable\Tests;
 
+use Designbycode\Taggable\TaggableServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Designbycode\Taggable\TaggableServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -28,10 +28,10 @@ class TestCase extends Orchestra
     {
         config()->set('database.default', 'testing');
 
-        $migration = include __DIR__ . '/../database/migrations/create_tags_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_tags_table.php.stub';
         $migration->up();
 
-        $migration = include __DIR__ . '/../database/migrations/create_taggable_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_taggable_table.php.stub';
         $migration->up();
 
     }

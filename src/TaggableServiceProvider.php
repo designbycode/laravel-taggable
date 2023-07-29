@@ -8,10 +8,10 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class TaggableServiceProvider extends PackageServiceProvider
 {
-
     public function boot()
     {
         Tag::observe(classes: TaggableObserver::class);
+
         return parent::boot();
     }
 
@@ -28,7 +28,7 @@ class TaggableServiceProvider extends PackageServiceProvider
             ->hasConfigFile()
             ->hasMigration('create_tags_table')
             ->hasMigration('create_taggable_table');
-//          ->hasViews()
-//          ->hasCommand(TagCommand::class);
+        //          ->hasViews()
+        //          ->hasCommand(TagCommand::class);
     }
 }

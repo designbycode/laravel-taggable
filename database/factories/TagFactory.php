@@ -1,9 +1,10 @@
-<?php namespace Designbycode\Tag\Database\Factories;
+<?php
+
+namespace Designbycode\Tag\Database\Factories;
 
 use Designbycode\Taggable\Tag;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-
 
 class TagFactory extends Factory
 {
@@ -12,10 +13,10 @@ class TagFactory extends Factory
     public function definition()
     {
         $name = $this->faker->unique()->colorName();
+
         return [
             'name' => $name,
-            'slug' => Str::slug($name)
+            'slug' => Str::slug($name),
         ];
     }
 }
-
