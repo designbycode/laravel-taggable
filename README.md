@@ -7,33 +7,26 @@
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
 
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-tags.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-tags)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require designbycode/laravel-tags
+composer require designbycode/laravel-taggable
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-tags-migrations"
+php artisan vendor:publish --tag="laravel-taggable-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-tags-config"
+php artisan vendor:publish --tag="laravel-taggable-config"
 ```
 
 This is the contents of the published config file:
@@ -46,9 +39,17 @@ return [
 
 ## Usage
 
+### Add Tags to Model
 ```php
-$tag = new Designbycode\Tag();
-echo $tag->echoPhrase('Hello, Designbycode!');
+$tag = new Designbycode\Taggable\Tag::create(['name' => 'Indigo']);
+
+$post->tag($tag);
+
+```
+
+### Retrieve tags from model
+```php
+$post->tags();
 ```
 
 ## Testing
