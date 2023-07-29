@@ -9,7 +9,7 @@
          * @param array $tags
          * @return mixed
          */
-        public function scopeWithAnyTag($query, array $tags)
+        public function scopeWithAnyTag($query, array $tags): mixed
         {
             return $query->hasTags($tags);
         }
@@ -32,7 +32,7 @@
          * @param array $tags
          * @return mixed
          */
-        public function scopeHasTags($query, array $tags)
+        public function scopeHasTags($query, array $tags): mixed
         {
             return $query->whereHas('tags', function($query) use ($tags) {
                 return $query->whereIn('slug', $tags);

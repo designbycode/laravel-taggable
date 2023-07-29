@@ -8,7 +8,6 @@
 
         public function creating(Tag $tag): void
         {
-
             $tag->name = Str::headline($tag->name);
             $tag->slug = Str::slug($tag->name);
         }
